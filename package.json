@@ -1,0 +1,35 @@
+{
+    "name": "capnproto-syntax",
+    "displayName": "capnproto-syntax",
+    "description": "Capnproto syntax highlighting for vscode",
+    "version": "0.1.0",
+    "publisher": "abronan",
+    "engines": {
+        "vscode": "^1.8.0"
+    },
+    "categories": [
+        "Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "capnproto",
+                "aliases": [
+                    "Cap'n Proto",
+                    "capnproto"
+                ],
+                "extensions": [
+                    ".capnp"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "capnproto",
+                "scopeName": "source.capnp",
+                "path": "./syntaxes/capnproto.tmLanguage.json"
+            }
+        ]
+    }
+}

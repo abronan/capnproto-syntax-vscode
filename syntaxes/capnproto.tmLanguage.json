@@ -1,0 +1,91 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Cap'n Proto",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#storagetypes"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#number"
+		},
+		{
+			"include": "#identifier"
+		}
+	],
+	"repository": {
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.sharp.capnproto",
+					"begin": "#",
+					"end": "$\\n?"
+				}
+			]
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.capnproto",
+					"match": "\\b(struct|enum|interface|union|import|using|const|annotation|extends|in|of|on|as|with|from|fixed)\\b"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.capnproto",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.capnproto",
+					"match": "\\\\."
+				}
+			]
+		},
+		"storagetypes": {
+			"patterns": [
+				{
+					"match": "\\b(union|group|Void|Bool|Int8|Int16|Int32|Int64|UInt8|UInt16|UInt32|UInt64|Float32|Float64|Text|Data|AnyPointer|AnyStruct|Capability|List)\\b",
+					"name": "storage.type.capnproto"
+				}
+			]
+		},
+		"string": {
+			"patterns": [
+				{
+					"begin": "\"",
+					"end": "\"",
+					"name": "string.quoted.double.capnproto"
+				}
+			]
+		},
+		"number": {
+			"patterns": [
+				{
+					"name": "constant.numeric.capnproto",
+					"match": "\\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))((e|E)(\\+|-)?[0-9]+)?)\\b"
+				}
+			]
+		},
+		"identifier": {
+			"patterns": [
+				{
+					"name": "constant.numeric.capnproto",
+					"match": "@"
+				}
+			]
+		}
+	},
+	"scopeName": "source.capnp"
+}
